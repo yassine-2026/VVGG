@@ -19,7 +19,7 @@ run = "pnpm --filter @workspace/video-downloader run dev"
 
 [services.production]
 build = [ "pnpm", "--filter", "@workspace/video-downloader", "run", "build" ]
-publicDir = "artifacts/video-downloader/dist/public"
+publicDir = "artifacts/video-downloader/dist"
 serve = "static"
 
 [[services.production.rewrites]]
