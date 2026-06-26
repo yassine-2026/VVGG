@@ -3,16 +3,13 @@
   "framework": null,
   "installCommand": "pnpm install",
   "buildCommand": "pnpm --filter @workspace/video-downloader run build",
-  "outputDirectory": "artifacts/video-downloader/dist/public",
+  "outputDirectory": "artifacts/video-downloader/dist",
   "env": {
     "PORT": "3000",
     "BASE_PATH": "/"
   },
   "rewrites": [
-    {
-      "source": "/((?!api/).*)",
-      "destination": "/index.html"
-    }
+    { "source": "/((?!api/).*)", "destination": "/index.html" }
   ],
   "headers": [
     {
@@ -30,7 +27,7 @@
       ]
     },
     {
-      "source": "/(.*\\.html)",
+      "source": "/(index\\.html)",
       "headers": [
         { "key": "Cache-Control", "value": "no-cache, no-store, must-revalidate" }
       ]
