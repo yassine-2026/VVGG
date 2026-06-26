@@ -1,9 +1,9 @@
 {
   "version": 2,
-  "framework": null,
-  "installCommand": "pnpm install",
-  "buildCommand": "pnpm --filter @workspace/video-downloader run build",
-  "outputDirectory": "artifacts/video-downloader/dist",
+  "framework": "vite",
+  "installCommand": "pnpm -C ../.. install",
+  "buildCommand": "pnpm -C ../.. --filter @workspace/video-downloader run build",
+  "outputDirectory": "dist",
   "routes": [
     {
       "src": "/api/healthz",
