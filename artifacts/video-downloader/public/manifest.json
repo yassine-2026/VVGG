@@ -1,0 +1,22 @@
+{
+  "name": "محمّل الفيديو العالمي",
+  "short_name": "محمّل الفيديو",
+  "description": "حمّل أي فيديو من أكثر من 1800 منصة في العالم بنقرة واحدة",
+  "start_url": "https://video-nest.vercel.app/",
+  "scope": "https://video-nest.vercel.app/",
+  "display": "standalone",
+  "background_color": "#0f1623",
+  "theme_color": "#0f1623",
+  "lang": "ar",
+  "dir": "rtl",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["utilities", "productivity"]
+}

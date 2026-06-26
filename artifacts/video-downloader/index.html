@@ -1,21 +1,78 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar" dir="rtl">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
-    <title>Video Downloader</title>
-    <meta name="description" content="Video Downloader — built on Replit. Update this description to reflect the app." />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5" />
+
+    <!-- Primary SEO -->
+    <title>محمّل الفيديو العالمي — تحميل فيديوهات من يوتيوب، تيك توك، فيسبوك وأكثر</title>
+    <meta name="description" content="حمّل أي فيديو من أكثر من 1800 منصة في العالم بنقرة واحدة — يوتيوب، تيك توك، فيسبوك، إنستغرام، تويتر، فيميو وغيرها. مجاني وسريع وبدون تسجيل." />
+    <meta name="keywords" content="تحميل فيديو, محمل فيديو, يوتيوب, تيك توك, فيسبوك, إنستغرام, تويتر, video downloader, yt-dlp" />
     <meta name="robots" content="index, follow" />
-    <meta property="og:title" content="Video Downloader" />
-    <meta property="og:description" content="Video Downloader — built on Replit. Update this description to reflect the app." />
+    <meta name="author" content="محمّل الفيديو العالمي" />
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://video-nest.vercel.app/" />
+
+    <!-- Open Graph -->
     <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://video-nest.vercel.app/" />
+    <meta property="og:title" content="محمّل الفيديو العالمي — تحميل من +1800 منصة" />
+    <meta property="og:description" content="حمّل أي فيديو من أكثر من 1800 منصة في العالم بنقرة واحدة — يوتيوب، تيك توك، فيسبوك، إنستغرام وغيرها. مجاني وسريع." />
+    <meta property="og:image" content="https://video-nest.vercel.app/opengraph.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="محمّل الفيديو العالمي" />
+    <meta property="og:site_name" content="محمّل الفيديو العالمي" />
+    <meta property="og:locale" content="ar_AR" />
+
+    <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Video Downloader" />
-    <meta name="twitter:description" content="Video Downloader — built on Replit. Update this description to reflect the app." />
+    <meta name="twitter:site" content="@videonest" />
+    <meta name="twitter:title" content="محمّل الفيديو العالمي — تحميل من +1800 منصة" />
+    <meta name="twitter:description" content="حمّل أي فيديو من أكثر من 1800 منصة في العالم بنقرة واحدة. مجاني وسريع." />
+    <meta name="twitter:image" content="https://video-nest.vercel.app/opengraph.jpg" />
+    <meta name="twitter:image:alt" content="محمّل الفيديو العالمي" />
+
+    <!-- Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "محمّل الفيديو العالمي",
+      "url": "https://video-nest.vercel.app/",
+      "description": "حمّل أي فيديو من أكثر من 1800 منصة في العالم بنقرة واحدة",
+      "applicationCategory": "UtilitiesApplication",
+      "operatingSystem": "Web",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "author": {
+        "@type": "Organization",
+        "name": "محمّل الفيديو العالمي",
+        "url": "https://video-nest.vercel.app/"
+      }
+    }
+    </script>
+
+    <!-- PWA -->
+    <link rel="manifest" href="/manifest.json" />
+    <meta name="theme-color" content="#0f1623" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="محمّل الفيديو" />
+
+    <!-- Icons -->
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="apple-touch-icon" href="/favicon.svg" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
   </head>
   <body>
     <div id="root"></div>
