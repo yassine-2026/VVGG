@@ -1,127 +1,226 @@
 @import "tailwindcss";
 @import "tw-animate-css";
-@plugin "@tailwindcss/typography";
 
 @custom-variant dark (&:is(.dark *));
 
+/* ============================================================
+   THEME TOKENS
+   ============================================================ */
 @theme inline {
   --color-background: hsl(var(--background));
   --color-foreground: hsl(var(--foreground));
   --color-border: hsl(var(--border));
-  --color-input: hsl(var(--input));
-  --color-ring: hsl(var(--ring));
-  --color-card: hsl(var(--card));
-  --color-card-foreground: hsl(var(--card-foreground));
-  --color-card-border: hsl(var(--card-border));
-  --color-popover: hsl(var(--popover));
-  --color-popover-foreground: hsl(var(--popover-foreground));
-  --color-popover-border: hsl(var(--popover-border));
   --color-primary: hsl(var(--primary));
   --color-primary-foreground: hsl(var(--primary-foreground));
-  --color-primary-border: var(--primary-border);
-  --color-secondary: hsl(var(--secondary));
-  --color-secondary-foreground: hsl(var(--secondary-foreground));
-  --color-secondary-border: var(--secondary-border);
   --color-muted: hsl(var(--muted));
   --color-muted-foreground: hsl(var(--muted-foreground));
-  --color-muted-border: var(--muted-border);
-  --color-accent: hsl(var(--accent));
-  --color-accent-foreground: hsl(var(--accent-foreground));
-  --color-accent-border: var(--accent-border);
-  --color-destructive: hsl(var(--destructive));
-  --color-destructive-foreground: hsl(var(--destructive-foreground));
-  --color-destructive-border: var(--destructive-border);
-  --color-chart-1: hsl(var(--chart-1));
-  --color-chart-2: hsl(var(--chart-2));
-  --color-chart-3: hsl(var(--chart-3));
-  --color-chart-4: hsl(var(--chart-4));
-  --color-chart-5: hsl(var(--chart-5));
-  --color-sidebar: hsl(var(--sidebar));
-  --color-sidebar-foreground: hsl(var(--sidebar-foreground));
-  --color-sidebar-border: hsl(var(--sidebar-border));
-  --color-sidebar-primary: hsl(var(--sidebar-primary));
-  --color-sidebar-primary-foreground: hsl(var(--sidebar-primary-foreground));
-  --color-sidebar-primary-border: var(--sidebar-primary-border);
-  --color-sidebar-accent: hsl(var(--sidebar-accent));
-  --color-sidebar-accent-foreground: hsl(var(--sidebar-accent-foreground));
-  --color-sidebar-accent-border: var(--sidebar-accent-border);
-  --color-sidebar-ring: hsl(var(--sidebar-ring));
+  --color-card: hsl(var(--card));
   --font-sans: var(--app-font-sans);
-  --font-serif: var(--app-font-serif);
-  --font-mono: var(--app-font-mono);
-  --radius-sm: calc(var(--radius) - 4px);
-  --radius-md: calc(var(--radius) - 2px);
+  --font-cairo: "Cairo", sans-serif;
   --radius-lg: var(--radius);
-  --radius-xl: calc(var(--radius) + 4px);
 }
 
 :root {
-  --button-outline: rgba(0,0,0, .10);
-  --badge-outline: rgba(0,0,0, .05);
-  --opaque-button-border-intensity: -8;
-  --elevate-1: rgba(0,0,0, .03);
-  --elevate-2: rgba(0,0,0, .08);
-
-  /* Deep navy dark theme — clean, modern, trustworthy */
   --background: 220 20% 10%;
   --foreground: 210 20% 95%;
   --border: 220 15% 20%;
   --card: 220 18% 13%;
-  --card-foreground: 210 20% 93%;
-  --card-border: 220 15% 22%;
-  --sidebar: 220 20% 8%;
-  --sidebar-foreground: 210 20% 90%;
-  --sidebar-border: 220 15% 18%;
-  --sidebar-primary: 215 85% 58%;
-  --sidebar-primary-foreground: 0 0% 100%;
-  --sidebar-accent: 220 18% 16%;
-  --sidebar-accent-foreground: 210 20% 88%;
-  --sidebar-ring: 215 85% 58%;
-  --popover: 220 18% 13%;
-  --popover-foreground: 210 20% 93%;
-  --popover-border: 220 15% 22%;
-  --primary: 215 85% 58%;
+  --primary: 239 84% 67%;
   --primary-foreground: 0 0% 100%;
-  --secondary: 220 18% 18%;
-  --secondary-foreground: 210 20% 85%;
   --muted: 220 18% 16%;
   --muted-foreground: 210 15% 55%;
-  --accent: 215 85% 58%;
-  --accent-foreground: 0 0% 100%;
-  --destructive: 0 72% 51%;
-  --destructive-foreground: 0 0% 100%;
-  --input: 220 15% 22%;
-  --ring: 215 85% 58%;
-  --chart-1: 215 85% 58%;
-  --chart-2: 175 60% 45%;
-  --chart-3: 35 90% 55%;
-  --chart-4: 280 65% 60%;
-  --chart-5: 340 75% 55%;
-
-  --app-font-sans: 'Inter', system-ui, sans-serif;
-  --app-font-serif: Georgia, serif;
-  --app-font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+  --app-font-sans: "Cairo", "Inter", system-ui, sans-serif;
   --radius: 0.75rem;
-
-  --primary-border: hsl(var(--primary));
-  --primary-border: hsl(from hsl(var(--primary)) h s calc(l + var(--opaque-button-border-intensity)) / alpha);
-  --secondary-border: hsl(var(--secondary));
-  --secondary-border: hsl(from hsl(var(--secondary)) h s calc(l + var(--opaque-button-border-intensity)) / alpha);
-  --muted-border: hsl(var(--muted));
-  --muted-border: hsl(from hsl(var(--muted)) h s calc(l + var(--opaque-button-border-intensity)) / alpha);
-  --accent-border: hsl(var(--accent));
-  --accent-border: hsl(from hsl(var(--accent)) h s calc(l + var(--opaque-button-border-intensity)) / alpha);
-  --destructive-border: hsl(var(--destructive));
-  --destructive-border: hsl(from hsl(var(--destructive)) h s calc(l + var(--opaque-button-border-intensity)) / alpha);
-  --sidebar-primary-border: hsl(var(--sidebar-primary));
-  --sidebar-accent-border: hsl(var(--sidebar-accent));
 }
 
+/* ============================================================
+   GLOBAL BASE
+   ============================================================ */
 @layer base {
-  * {
-    @apply border-border;
-  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
   body {
-    @apply font-sans antialiased bg-background text-foreground;
+    font-family: "Cairo", "Inter", system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    min-height: 100vh;
+    overflow-x: hidden;
   }
+
+  /* Scrollbar */
+  ::-webkit-scrollbar { width: 6px; }
+  ::-webkit-scrollbar-track { background: transparent; }
+  ::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.15); border-radius: 99px; }
+  ::-webkit-scrollbar-thumb:hover { background: rgba(255,255,255,0.25); }
+}
+
+/* ============================================================
+   ANIMATED BACKGROUND ORBS
+   ============================================================ */
+.orb {
+  position: absolute;
+  border-radius: 9999px;
+  filter: blur(80px);
+  pointer-events: none;
+  will-change: transform;
+}
+
+.orb-1 {
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, #6366F1 0%, transparent 70%);
+  top: -120px;
+  right: -100px;
+  animation: orb-float-1 18s ease-in-out infinite;
+}
+
+.orb-2 {
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, #8B5CF6 0%, transparent 70%);
+  bottom: 10%;
+  left: -80px;
+  animation: orb-float-2 22s ease-in-out infinite;
+}
+
+.orb-3 {
+  width: 350px;
+  height: 350px;
+  background: radial-gradient(circle, #06B6D4 0%, transparent 70%);
+  top: 40%;
+  right: 10%;
+  animation: orb-float-3 26s ease-in-out infinite;
+}
+
+@keyframes orb-float-1 {
+  0%   { transform: translate(0, 0) scale(1); }
+  25%  { transform: translate(-40px, 60px) scale(1.1); }
+  50%  { transform: translate(30px, 120px) scale(0.95); }
+  75%  { transform: translate(-20px, 40px) scale(1.05); }
+  100% { transform: translate(0, 0) scale(1); }
+}
+@keyframes orb-float-2 {
+  0%   { transform: translate(0, 0) scale(1); }
+  33%  { transform: translate(60px, -40px) scale(1.08); }
+  66%  { transform: translate(-30px, 60px) scale(0.97); }
+  100% { transform: translate(0, 0) scale(1); }
+}
+@keyframes orb-float-3 {
+  0%   { transform: translate(0, 0) scale(1); }
+  40%  { transform: translate(-50px, -60px) scale(1.12); }
+  80%  { transform: translate(30px, 40px) scale(0.93); }
+  100% { transform: translate(0, 0) scale(1); }
+}
+
+/* ============================================================
+   GLASSMORPHISM CARD
+   ============================================================ */
+.glass-card {
+  background: rgba(255, 255, 255, 0.055);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.35),
+    inset 0 1px 0 rgba(255, 255, 255, 0.06);
+}
+
+.glass-card-light {
+  background: rgba(255, 255, 255, 0.68);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(255, 255, 255, 0.85);
+  box-shadow:
+    0 8px 32px rgba(99, 102, 241, 0.08),
+    0 1px 0 rgba(255, 255, 255, 0.9);
+}
+
+/* ============================================================
+   SKELETON SHIMMER
+   ============================================================ */
+.skeleton {
+  background: linear-gradient(
+    90deg,
+    rgba(255,255,255,0.06) 25%,
+    rgba(255,255,255,0.12) 50%,
+    rgba(255,255,255,0.06) 75%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.8s ease-in-out infinite;
+  border-radius: 0.5rem;
+}
+
+.skeleton-light {
+  background: linear-gradient(
+    90deg,
+    rgba(0,0,0,0.05) 25%,
+    rgba(0,0,0,0.10) 50%,
+    rgba(0,0,0,0.05) 75%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.8s ease-in-out infinite;
+  border-radius: 0.5rem;
+}
+
+@keyframes shimmer {
+  0%   { background-position: -200% 0; }
+  100% { background-position:  200% 0; }
+}
+
+/* ============================================================
+   TYPEWRITER CURSOR
+   ============================================================ */
+.typewriter-text::after {
+  content: "|";
+  animation: blink 1s step-end infinite;
+  opacity: 0.6;
+  margin-right: 2px;
+}
+@keyframes blink {
+  0%, 100% { opacity: 0.6; }
+  50%       { opacity: 0; }
+}
+
+/* ============================================================
+   UTILITY: font-cairo
+   ============================================================ */
+.font-cairo {
+  font-family: "Cairo", "Inter", system-ui, sans-serif;
+}
+
+/* ============================================================
+   GRADIENT TEXT
+   ============================================================ */
+.gradient-text {
+  background: linear-gradient(135deg, #818CF8, #A78BFA, #67E8F9);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ============================================================
+   LOGO GLOW PULSE
+   ============================================================ */
+@keyframes logo-glow {
+  0%, 100% { filter: drop-shadow(0 0 8px rgba(99,102,241,0.4)); }
+  50%       { filter: drop-shadow(0 0 20px rgba(168,85,247,0.7)); }
+}
+.logo-glow {
+  animation: logo-glow 3s ease-in-out infinite;
+}
+
+/* ============================================================
+   SMOOTH THEME TRANSITION
+   ============================================================ */
+*, *::before, *::after {
+  transition-property: background-color, border-color, color, box-shadow;
+  transition-duration: 0.25s;
+  transition-timing-function: ease;
+}
+
+/* Override for transforms & opacity so animations aren't slow */
+[class*="animate-"],
+[style*="transform"],
+.orb {
+  transition-property: none;
 }
